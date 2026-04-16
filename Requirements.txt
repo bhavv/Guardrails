@@ -1,0 +1,63 @@
+Installation Commands
+powershell# Python packages
+pip install pandas
+pip install seaborn
+pip install boto3 botocore
+pip install boto3
+pip install fastapi pydantic uvicorn
+pip install boto3 s3fs
+pip install scikit-learn==1.8.0
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install --break-system-packages -r requirements.txt
+
+# Virtual environment setup
+py -3.12 -m venv venv
+venv\Scripts\activate
+pip install fastapi uvicorn sentence-transformers torch joblib scikit-learn numpy requests boto3 pyarrow pandas
+
+# Node / Frontend
+npm install
+npx update-browserslist-db@latest
+
+# Ollama models
+ollama pull qwen2.5
+ollama pull qwen2.5:7b
+ollama pull qwen2.5-coder:7b
+ollama pull gemma:2b
+
+Run the Project — Every Time
+powershell# Terminal 1 — Ollama
+ollama serve
+
+# Terminal 2 — Backend
+cd C:\Users\bhava\Documents\GuardRail_For_LLM
+venv\Scripts\activate
+py -3.12 run_api.py
+
+# Terminal 3 — Frontend
+cd C:\Users\bhava\Documents\GuardRail_For_LLM\project
+npm run dev
+
+Verify / Check Commands
+powershell# Check Ollama
+ollama ps
+ollama list
+Invoke-WebRequest -UseBasicParsing http://localhost:11434 | Select-Object -ExpandProperty Content
+
+# Check port 8000
+netstat -ano | findstr :8000
+
+# Kill port 8000
+taskkill /PID <pid> /F
+taskkill /IM python.exe /F
+
+# AWS
+aws --version
+aws sts get-caller-identity
+aws s3 ls s3://guardrail-group-bucket/
+
+# Git
+git status
+git branch
+git fetch origin
+git log --oneline origin/main -15
